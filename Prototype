@@ -30,11 +30,13 @@ class Block:
         return self._value
 
     def addValue(self):
-        if self._value!="":
-            return "You cannot change an existing block"
-        else:
-            self._value=input("Are you X or O?\n")
-            self._value=self._value.upper()
+       if self._value =="X":
+            return "You choose X"
+        elif self._value == "O":
+            return "You choose O"
+        while self._value != "X" and "O":
+            self._value = input("Please choose one!")
+            self._value = self._value.upper()
             return self._value
 
     def grphic(self):
