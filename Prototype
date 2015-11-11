@@ -77,11 +77,11 @@ block25=Block(568,530,25)
 
 
 board=[
-    [block1.grphic()],[block2.grphic()],[block3.grphic()],[block4.grphic()],[block5.grphic()]
-    [block6.grphic()],[block7.grphic()],[block8.grphic()],[block9.grphic()],[block10.grphic()],
-    [block11.grphic()],[block12.grphic()],[block13.grphic()],[block14.grphic()],[block15.grphic()],
-    [block16.grphic()],[block17.grphic()],[block18.grphic()],[block19.grphic()],[block20.grphic()],
-    [block21.grphic()],[block22.grphic()],[block23.grphic()],[block24.grphic()],[block25.grphic()]
+    [block1.grphic(),block2.grphic(),block3.grphic(),block4.grphic(),block5.grphic()],
+    [block6.grphic(),block7.grphic(),block8.grphic(),block9.grphic(),block10.grphic()],
+    [block11.grphic(),block12.grphic(),block13.grphic(),block14.grphic(),block15.grphic()],
+    [block16.grphic(),block17.grphic(),block18.grphic(),block19.grphic(),block20.grphic()],
+    [block21.grphic(),block22.grphic(),block23.grphic(),block24.grphic(),block25.grphic()]
 ]
 
 win.wait()
