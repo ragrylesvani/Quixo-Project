@@ -30,10 +30,14 @@ class Block:
         return self._value
 
     def addValue(self):
-       if self=="X":
-            return "You choose X"
+       self =input("X or O")
+        self = self.upper()
+        if self =="X":
+            print("You choose X")
+            return self
         elif self == "O":
-            return "You choose O"
+            print("You choose O")
+            return self
         while self != "X" and "O":
             self = input("Please choose one!")
             self = self.upper()
