@@ -34,10 +34,10 @@ class Block:
         self._value = self._value.upper()
         if self._value =="X":
             print("You choose X")
-            return self
+            return self._value
         elif self._value == "O":
             print("You choose O")
-            return self
+            return self._value
         while self._value != "X" and "O":
             self._value = input("Please choose one!")
             self._value = self._value.upper()
