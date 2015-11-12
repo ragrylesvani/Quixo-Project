@@ -41,7 +41,7 @@ class Block:
         while self._value != "X" and "O":
             self._value = input("Please choose one!")
             self._value = self._value.upper()
-            return self._value
+           
 
     def grphic(self):
         canvas.setTextFont(None,None,180)
