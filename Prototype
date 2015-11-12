@@ -82,12 +82,13 @@ block24=Block(428,530,24)
 block25=Block(568,530,25)
 
 
-board=[
-    [block1.grphic(),block2.grphic(),block3.grphic(),block4.grphic(),block5.grphic()],
-    [block6.grphic(),block7.grphic(),block8.grphic(),block9.grphic(),block10.grphic()],
-    [block11.grphic(),block12.grphic(),block13.grphic(),block14.grphic(),block15.grphic()],
-    [block16.grphic(),block17.grphic(),block18.grphic(),block19.grphic(),block20.grphic()],
-    [block21.grphic(),block22.grphic(),block23.grphic(),block24.grphic(),block25.grphic()]
-]
+board=[block1,block2,block3,block4,block5,block6,block7,block8,block9,block10,block11,block12,block13,block14,block15,block16,block17,block18,block19,block20,block21,block22,block23,block24,block25]
+
+
+
+blocknum = int(input("which block do you want to choose"))
+board[blocknum -1].addvalue()
+board[blocknum-1].grphic()
+
 
 win.wait()
