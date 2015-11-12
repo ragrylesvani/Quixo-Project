@@ -30,14 +30,14 @@ class Block:
         return self._value
 
     def addValue(self):
-       if self._value =="X":
+       if self=="X":
             return "You choose X"
-        elif self._value == "O":
+        elif self == "O":
             return "You choose O"
-        while self._value != "X" and "O":
-            self._value = input("Please choose one!")
-            self._value = self._value.upper()
-            return self._value
+        while self != "X" and "O":
+            self = input("Please choose one!")
+            self = self.upper()
+            return self
 
     def grphic(self):
         canvas.setTextFont(None,None,180)
