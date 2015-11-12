@@ -6,89 +6,98 @@ global canvas
 canvas=win.canvas()
 
 
-def Board():
+def board():
 
     canvas.setBackground("tan")
     for x in range(1,5):
         canvas.drawLine(x*140,0,x*140,700)
     for y in range(1,5):
         canvas.drawLine(0,y*140,700,y*140)
-Board()
+board()
 
+#def rageQuit():
+       # win.close()
 
 class Block:
 
-    def __init__(self,x,y,itemId,value=""):
+    def __init__(self,x,y,itemId=None,value=""):
         self._x=x
         self._y=y
         self._value=value
         self._a=itemId
-        #itemId will be rpresented but the block number
+        #itemId will be represented but the block number
         #i.e block1=Block itemId=1 block2=Block itemId=2
 
-    def value(self):
-        return self._value
+    def location(self):
+        return self._x,self._y
 
-    def addValue(self):
-       self._value =input("X or O")
-        self._value = self._value.upper()
-        if self._value =="X":
-            print("You choose X")
-            return self._value
-        elif self._value == "O":
-            print("You choose O")
-            return self._value
-        while self._value != "X" and "O":
-            self._value = input("Please choose one!")
-            self._value = self._value.upper()
-           
+    def value(self):
+        if self._value!="":
+            print("You cannot change an existing block")
+            return self.value()
+        else:
+            self._value=input("Are you X or O?\n")
+            self._value=self._value.upper()
+            if self._value==("X") or self._value==("O"):
+                return self._value
+            else:
+                print("XOXOXOX only please!!")
+                self._value=""
+                return self.value()
 
     def grphic(self):
         canvas.setTextFont(None,None,180)
         canvas.drawText(self._x,self._y,self._value)
 
-
-    def reset(self):
-        canvas.clear()
-        board()
-
     def move(self,dx,dy):
+        self.itemId()
         canvas.shiftItem(self._a,dx,dy)
 
-block1=Block(8,-30,1)
-block2=Block(148,-30,2)
-block3=Block(288,-30,3)
-block4=Block(428,-30,4)
-block5=Block(578,-30,5)
-block6=Block(8,110,6)
-block7=Block(148,110,7)
-block8=Block(288,110,8)
-block9=Block(428,110,9)
-block10=Block(568,110,10)
-block11=Block(8,250,11)
-block12=Block(148,250,12)
-block13=Block(288,250,13)
-block14=Block(428,250,14)
-block15=Block(568,250,15)
-block16=Block(8,390,16)
-block17=Block(148,390,17)
-block18=Block(288,390,18)
-block19=Block(428,390,19)
-block20=Block(568,390,20)
-block21=Block(8,530,21)
-block22=Block(148,530,22)
-block23=Block(288,530,23)
-block24=Block(428,530,24)
-block25=Block(568,530,25)
-
-
-board=[block1,block2,block3,block4,block5,block6,block7,block8,block9,block10,block11,block12,block13,block14,block15,block16,block17,block18,block19,block20,block21,block22,block23,block24,block25]
+    def itemId(self):
+        x=canvas.items()
+        self._a=x[len(x)-1]
+        return self._a
 
 
 
-blocknum = int(input("which block do you want to choose"))
-board[blocknum -1].addvalue()
-board[blocknum-1].grphic()
+block1=Block(8,-30)
+block2=Block(148,-30)
+block3=Block(288,-30)
+block4=Block(428,-30)
+block5=Block(578,-30)
+block6=Block(8,110)
+block7=Block(148,110)
+block8=Block(288,110)
+block9=Block(428,110)
+block10=Block(568,110)
+block11=Block(8,250)
+block12=Block(148,250)
+block13=Block(288,250)
+block14=Block(428,250)
+block15=Block(568,250)
+block16=Block(8,390)
+block17=Block(148,390)
+block18=Block(288,390)
+block19=Block(428,390)
+block20=Block(568,390)
+block21=Block(8,530)
+block22=Block(148,530)
+block23=Block(288,530)
+block24=Block(428,530)
+block25=Block(568,530)
 
 
-win.wait()
+board=[
+    [block1,block2,block3,block4,block5],
+    [block6,block7,block8,block9,block10],
+    [block11,block12,block13,block14,block15],
+    [block16,block17,block18,block19,block25],
+    [block21,block22,block23,block24,block25]
+]
+
+block18.value()
+block18.grphic()
+block18.move(-24,-78)
+
+
+
